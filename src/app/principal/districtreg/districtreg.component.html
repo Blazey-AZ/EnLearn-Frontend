@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h3 style="text-align: center;">District Register</h3>
+            <form [formGroup]='DistrictRegisterForm'>
+                District Name
+                <div class="form-group">
+                    <input type="text" formControlName="DistrictName" class="form-control"
+                        placeholder="Enter the District Name" />
+                </div>
+                <br>
+                <div class="form-group">
+                   <label> State Name</label>
+                  
+                   <p-dropdown [options]="data" formControlName="StateName"></p-dropdown>
+
+                </div>
+
+               
+               
+               
+                <div class="form-group">
+                    <br>
+                    <button type="submit" class="btn btn-danger" rounded="true" (click)="OnSubmit()">Save Data</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

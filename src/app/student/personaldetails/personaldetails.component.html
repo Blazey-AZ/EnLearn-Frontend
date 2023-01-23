@@ -1,0 +1,97 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h3 style="text-align: center;">Student Register</h3>
+            <form [formGroup]='this.PersonalInfoRegForm'>
+                 Name
+                <div class="form-group" >
+
+                    <input type="text" name="data" formControlName="StudentName" class="form-control" readonly/>
+                </div>
+                <br>
+                Image
+                <div class="form-group">
+                    <input type="text" formControlName="Image" class="form-control"
+                        placeholder="Enter the Contact Number" />
+                </div>
+                <br>
+                Name of Father
+                <div class="form-group">
+                    <input type="text" formControlName="NameOfFather" class="form-control" placeholder="Enter the Gender" />
+                </div>
+                <br>
+                DOB
+                <div class="form-group">
+                    <input type="date" formControlName="DateOfBirth" class="form-control"
+                        placeholder="Enter the Username" />
+                </div>
+                <br>
+                Nationality
+                <div class="form-group">
+                    <input type="text" formControlName="Nationality" class="form-control"
+                        placeholder="Enter the Password" />
+                </div>
+                <br>
+                Annual Income
+                <div class="form-group">
+                    <input type="text" formControlName="AnnualIncome" class="form-control"
+                        placeholder="Enter the Parent Contact" />
+                </div>
+                <br>
+                <div class="form-group">
+                    <label> Religion Name</label>
+                   
+                    <p-dropdown [options]="data" formControlName="ReligionName"></p-dropdown>
+ 
+                 </div>
+                 <div>
+                 <label> Caste Name</label>
+                   
+                    <p-dropdown [options]="data2" formControlName="CasteName"></p-dropdown>
+ 
+                 </div>
+                 <div class="form-group">
+                    <label> State Name</label>
+                   
+                    <p-dropdown [options]="data3" formControlName="StateName"></p-dropdown>
+ 
+                 </div>
+                 <div>
+                 <label> District Name</label>
+                   
+                    <p-dropdown [options]="data4" formControlName="DistrictName"></p-dropdown>
+ 
+                 </div>
+                House Name
+                <div class="form-group">
+                    <input type="text" formControlName="HouseName" class="form-control"
+                        placeholder="Enter the Parent Contact" />
+                </div>
+                <br>
+                Place
+                <div class="form-group">
+                    <input type="text" formControlName="Place" class="form-control"
+                        placeholder="Enter the Parent Contact" />
+                </div>
+                <br>
+                Pincode
+                <div class="form-group">
+                    <input type="number" formControlName="Pincode" class="form-control"
+                        placeholder="Enter the Parent Contact" />
+                </div>
+                <br>
+                Email
+                <div class="form-group">
+                    <input type="text" formControlName="Email" class="form-control"
+                        placeholder="Enter the Parent Contact" />
+                </div>
+                <br>
+               
+                <div class="form-group">
+                    <br>
+                    <button type="submit" class="btn btn-danger" rounded="true" (click)="OnSubmit()">Save Data</button> 
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

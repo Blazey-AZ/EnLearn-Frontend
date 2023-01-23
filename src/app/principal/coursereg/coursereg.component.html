@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h3 style="text-align: center;">Course Register</h3>
+            <form [formGroup]='CourseRegisterForm'>
+                Course Name
+                <div class="form-group">
+                    <input type="text" formControlName="CourseName" class="form-control"
+                        placeholder="Enter the Course Name" />
+                </div>
+                <br>
+                Course Short Name
+                <div class="form-group">
+                    <input type="text" formControlName="CourseShortName" class="form-control"
+                        placeholder="Enter the Course Short Name" />
+                </div>
+                <br>
+                Course Type
+                <div class="form-group">
+                    <input type="text" formControlName="CourseType" class="form-control" placeholder="Enter the Course Type" />
+                </div>
+                <br>
+                Course Description
+                <div class="form-group">
+                    <input type="text" formControlName="CourseDescription" class="form-control"
+                        placeholder="Enter the Course Description" />
+                </div>
+                <br>
+               
+               
+                <div class="form-group">
+                    <br>
+                    <button type="submit" class="btn btn-danger" rounded="true" (click)="OnSubmit()">Save Data</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

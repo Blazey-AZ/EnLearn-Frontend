@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h3 style="text-align: center;">Student Register</h3>
+            <form [formGroup]='CourseRegisterForm'>
+                Student Name
+                <div class="form-group">
+                    <input type="text" formControlName="StudentName" class="form-control"
+                        placeholder="Enter the Student Name" />
+                </div>
+                <br>
+                Contact Number
+                <div class="form-group">
+                    <input type="text" formControlName="ContactNumber" class="form-control"
+                        placeholder="Enter the Contact Number" />
+                </div>
+                <br>
+                Gender
+                <div class="form-group">
+                    <input type="text" formControlName="Gender" class="form-control" placeholder="Enter the Gender" />
+                </div>
+                <br>
+                Username
+                <div class="form-group">
+                    <input type="text" formControlName="UserName" class="form-control"
+                        placeholder="Enter the Username" />
+                </div>
+                <br>
+                Password
+                <div class="form-group">
+                    <input type="text" formControlName="Password" class="form-control"
+                        placeholder="Enter the Password" />
+                </div>
+                <br>
+                Parent Contact
+                <div class="form-group">
+                    <input type="text" formControlName="ParentContact" class="form-control"
+                        placeholder="Enter the Parent Contact" />
+                </div>
+                <br>
+               
+                <div class="form-group">
+                    <br>
+                    <button type="submit" class="btn btn-danger" rounded="true" (click)="OnSubmit()">Save Data</button> 
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
