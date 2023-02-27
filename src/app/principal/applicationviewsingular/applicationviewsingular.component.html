@@ -1,0 +1,162 @@
+<!-- <table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Application NO</th>
+      <th scope="col">Student ID</th>
+      <th scope="col">Student Name</th>
+      <th scope="col">First Option</th>
+      <th scope="col">Second Option</th>
+      <th scope="col">Third Option</th>
+      <th scope="col">Tenth Board</th>
+      <th scope="col">Tenth Institution</th>
+      <th scope="col">Tenth Place</th>
+      <th scope="col">Tenth State</th>
+      <th scope="col">Tenth Year</th>
+      <th scope="col">Tenth Mark</th>
+      <th scope="col">Tenth No Of Attempts</th>
+      <th scope="col">Twelfth Board</th>
+      <th scope="col">Twelfth Institution</th>
+      <th scope="col">Twelfth Place</th>
+      <th scope="col">Twelfth State</th>
+      <th scope="col">Twelfth Year</th>
+      <th scope="col">Twelfth Mark</th>
+      <th scope="col">Twelfth No Of Attempts</th>
+      <th scope="col">Date</th>
+      <th scope="col">Application Status</th>
+
+    </tr>
+  </thead>
+  <tbody *ngFor="let apply of applications">
+    <tr>
+      <td>{{apply.applicationNo}}</td>
+      <td>{{apply.studentID}}</td>
+      <td>{{apply.studentName}}</td>
+      <td>{{apply.firstOption}}</td>
+      <td>{{apply.secondOption}}</td>
+      <td>{{apply.thirdOption}}</td>
+      <td>{{apply.tenthBoard}}</td>
+      <td>{{apply.tenthInstitution}}</td>
+      <td>{{apply.tenthPlace}}</td>
+      <td>{{apply.tenthState}}</td>
+      <td>{{apply.tenthYear}}</td>
+      <td>{{apply.tenthMark}}</td>
+      <td>{{apply.tenthNoOfAttempts}}</td>
+      <td>{{apply.twelfthBoard}}</td>
+      <td>{{apply.twelfthInstitution}}</td>
+      <td>{{apply.twelfthPlace}}</td>
+      <td>{{apply.twelfthState}}</td>
+      <td>{{apply.twelfthYear}}</td>
+      <td>{{apply.twelfthMark}}</td>
+      <td>{{apply.twelfthNoOfAttempts}}</td>
+      <td>{{apply.date}}</td>
+      <td>{{apply.applicationStatus}}</td>
+
+
+
+      <td> <button class="btn btn-primary" routerLink="/applicationsview">All Applications Info</button> </td>
+      <td> <button class="btn btn-success" (click)="enroll(apply.applicationNo)">Enroll</button> </td>
+      <td> <button class="btn btn-danger" (click)="reject(apply.applicationNo)">Reject</button> </td>
+
+
+    </tr>
+    <tr>
+
+    </tr>
+
+  </tbody>
+</table> -->
+
+
+<div class="col-md-3 col-expand-lg bg-white navbar-light shadow p-0" *ngIf="(accountService.currentAdmin$ | async) as principal">
+<app-error404 *ngIf="!(accountService.currentAdmin$ | async) as principal"></app-error404>
+
+  <div class="signup" *ngFor="let apply of applications">
+    <div class="signup-connect">
+      <h2>APPLICATIONDETAILS</h2>
+      <h2>[{{apply.applicationStatus}}]</h2>
+      <a class="btn btn-social btn-facebook"><i class="fa fa-star"></i>Student Name: {{apply.studentName }} |
+        <br>Status: {{apply.applicationStatus}} </a>
+      <a class="btn btn-social btn-facebook"><i class="fa fa-star"></i> Student ID: {{apply.studentID}}</a>
+      <a class="btn btn-social btn-facebook"><i class="fa fa-star"></i> Application No: {{apply.applicationNo}}</a>
+      <a class="btn btn-social btn-facebook"><i class="fa fa-star"></i> Preferred Course: {{apply.firstOption}}</a>
+      <a class="btn btn-social btn-facebook"><i class="fa fa-star"></i> Backup Courses 1: {{apply.secondOption}} |
+        2: {{apply.thirdOption}}</a>
+
+      <br><br><br>
+
+
+
+
+      <a (click)="verify(apply.applicationNo)" class="btn btn-social btn-linkedin"><i class="fa fa-check"></i> Verify
+        Student</a>
+      <a (click)="unverify(apply.applicationNo)" class="btn btn-social btn-google"><i class="fa fa-thumbs-down"></i> Unverify
+        Student</a>
+    </div>
+    <div class="signup-classic">
+      <form class="form">
+
+        <fieldset class="username">
+          <label>Tenth Board</label>
+          <input type="text" placeholder="{{apply.tenthBoard}}" readonly />
+        </fieldset>
+        <fieldset class="username">
+          <label>Tenth Institution</label>
+          <input type="text" placeholder="{{apply.tenthInstitution}}" readonly />
+        </fieldset>
+        <fieldset class="username">
+          <label>Tenth Mark</label>
+          <input type="text" placeholder="{{apply.tenthMark}}" readonly />
+        </fieldset>
+        <fieldset class="username">
+          <label>Tenth No of Attempts</label>
+          <input type="text" placeholder="{{apply.tenthNoOfAttempts}}" readonly />
+        </fieldset>
+        <fieldset class="username">
+          <label>Tenth Place</label>
+          <input type="text" placeholder="{{apply.tenthPlace}}" readonly />
+        </fieldset>
+        <fieldset class="username">
+          <label>Tenth State</label>
+          <input type="text" placeholder="{{apply.tenthState}}" readonly />
+        </fieldset>
+        <fieldset class="username">
+          <label>Tenth Year</label>
+          <input type="text" placeholder="{{apply.tenthYear | date}}" readonly />
+        </fieldset>
+      </form>
+    </div>
+    <div class="signup-classic">
+      <form class="form">
+
+        <fieldset class="username">
+          <label>Twelfth Board</label>
+          <input type="text" placeholder="{{apply.twelfthBoard}}" readonly />
+        </fieldset>
+        <fieldset class="username">
+          <label>Twelfth Institution</label>
+          <input type="text" placeholder="{{apply.twelfthInstitution}}" readonly />
+        </fieldset>
+        <fieldset class="username">
+          <label>Twelfth Mark</label>
+          <input type="text" placeholder="{{apply.twelfthMark}}" readonly />
+        </fieldset>
+        <fieldset class="username">
+          <label>Twelfth No of Attempts</label>
+          <input type="text" placeholder="{{apply.twelfthNoOfAttempts}}" readonly />
+        </fieldset>
+        <fieldset class="username">
+          <label>Twelfth Place</label>
+          <input type="text" placeholder="{{apply.twelfthPlace}}" readonly />
+        </fieldset>
+        <fieldset class="username">
+          <label>Twelfth State</label>
+          <input type="text" placeholder="{{apply.twelfthState}}" readonly />
+        </fieldset>
+        <fieldset class="username">
+          <label>Twelfth Year</label>
+          <input type="text" placeholder="{{apply.twelfthYear | date}}" readonly />
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>

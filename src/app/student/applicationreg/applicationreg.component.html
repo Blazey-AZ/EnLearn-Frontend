@@ -1,0 +1,171 @@
+<app-error404 *ngIf="!(accountService.currentUser$ | async) as user"></app-error404>
+
+<div class="container" *ngIf="(accountService.currentUser$ | async) as user">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h3 style="text-align: center;">Application Register</h3>
+            <form [formGroup]='this.ApplicationRegForm'>
+
+                <div class="form-group">
+                    <label> First Option &nbsp;&nbsp;&nbsp;&nbsp;</label>
+
+                    <p-dropdown [options]="data" formControlName="FirstOption"></p-dropdown>
+
+                </div>
+                <div>
+                    <label> Second Option</label>
+
+                    <p-dropdown [options]="data" formControlName="SecondOption"></p-dropdown>
+
+                </div>
+                <div class="form-group">
+                    <label> Third Option  &nbsp;&nbsp;&nbsp;</label>
+
+                    <p-dropdown [options]="data" formControlName="ThirdOption"></p-dropdown>
+
+                </div>
+
+                Tenth Board
+                <div class="form-group">
+                    <input type="text" formControlName="TenthBoard" class="form-control"
+                        placeholder="Enter the 10th Board" />
+                    <span style="color: red"
+                        *ngIf="ApplicationRegForm.get('TenthBoard')?.touched && ApplicationRegForm.get('TenthBoard')?.invalid">This
+                        field is required!</span>
+
+                </div>
+                <br>
+                Tenth Institution
+                <div class="form-group">
+                    <input type="text" formControlName="TenthInstitution" class="form-control"
+                        placeholder="Enter the 10th Institution" required />
+                    <span style="color: red"
+                        *ngIf="ApplicationRegForm.get('TenthInstitution')?.touched && ApplicationRegForm.get('TenthInstitution')?.invalid">This
+                        field is required!</span>
+
+                </div>
+                <br>
+                Tenth Place
+                <div class="form-group">
+                    <input type="text" formControlName="TenthPlace" class="form-control"
+                        placeholder="Enter the Tenth Place" />
+                    <span style="color: red"
+                        *ngIf="ApplicationRegForm.get('TenthPlace')?.touched && ApplicationRegForm.get('TenthPlace')?.invalid">This
+                        field is required!</span>
+
+                </div>
+                <br>
+                Tenth State
+                <div class="form-group">
+                    <input type="text" formControlName="TenthState" class="form-control"
+                        placeholder="Enter the Tenth State" />
+                    <span style="color: red"
+                        *ngIf="ApplicationRegForm.get('TenthState')?.touched && ApplicationRegForm.get('TenthState')?.invalid">This
+                        field is required!</span>
+
+                </div>
+                <br>
+                Tenth Year
+                <div class="form-group">
+
+                    <input type="date" formControlName="TenthYear" class="form-control"
+                        placeholder="Enter the Tenth Year" />
+                    <span style="color: red"
+                        *ngIf="ApplicationRegForm.get('TenthYear')?.touched && ApplicationRegForm.get('TenthYear')?.invalid">This
+                        field is required!</span>
+
+                </div>
+                <br>
+                Tenth Mark [%]
+                <div class="form-group">
+                    <input type="number" formControlName="TenthMark" class="form-control"
+                        placeholder="Enter the Tenth Mark" />
+                        <span style="color: red"
+                        *ngIf="ApplicationRegForm.get('TenthMark')?.touched && ApplicationRegForm.get('TenthMark')?.invalid">Below 30% is subjected to failure!</span>
+
+                </div>
+                <br>
+                Tenth No Of Attempts
+                <div class="form-group">
+                    <input type="number" formControlName="TenthNoOfAttempts" class="form-control"
+                        placeholder="Enter the Tenth No Of Attempts" />
+                    <span style="color: red"
+                        *ngIf="ApplicationRegForm.get('TenthNoOfAttempts')?.touched && ApplicationRegForm.get('TenthNoOfAttempts')?.invalid">This
+                        field is required!</span>
+
+                </div>
+                <br>
+                Twelfth Board
+                <div class="form-group">
+                    <input type="text" formControlName="TwelfthBoard" class="form-control"
+                        placeholder="Enter the Twelfth Board" />
+                    <span style="color: red"
+                        *ngIf="ApplicationRegForm.get('TwelfthBoard')?.touched && ApplicationRegForm.get('TwelfthBoard')?.invalid">This
+                        field is required!</span>
+
+                </div>
+                <br>
+                Twelfth Institution
+                <div class="form-group">
+                    <input type="text" formControlName="TwelfthInstitution" class="form-control"
+                        placeholder="Enter the Twelfth Institution" />
+                        <span style="color: red"
+                        *ngIf="ApplicationRegForm.get('TwelfthInstitution')?.touched && ApplicationRegForm.get('TwelfthInstitution')?.invalid">This
+                        field is required!</span>
+                        
+                </div>
+                <br>
+                Twelfth Place
+                <div class="form-group">
+                    <input type="text" formControlName="TwelfthPlace" class="form-control"
+                        placeholder="Enter the Twelfth Place" />
+                        <span style="color: red"
+                        *ngIf="ApplicationRegForm.get('TwelfthPlace')?.touched && ApplicationRegForm.get('TwelfthPlace')?.invalid">This
+                        field is required!</span>
+                </div>
+                <br>
+                Twelfth State
+                <div class="form-group">
+                    <input type="text" formControlName="TwelfthState" class="form-control"
+                        placeholder="Enter the Twelfth State" />
+                        <span style="color: red"
+                        *ngIf="ApplicationRegForm.get('TwelfthState')?.touched && ApplicationRegForm.get('TwelfthState')?.invalid">This
+                        field is required!</span>
+                </div>
+                <br>
+                Twelfth Year
+                <div class="form-group">
+                    <input type="date" formControlName="TwelfthYear" class="form-control"
+                        placeholder="Enter the Twelfth Year" />
+                        <span style="color: red"
+                        *ngIf="ApplicationRegForm.get('TwelfthYear')?.touched && ApplicationRegForm.get('TwelfthYear')?.invalid">This
+                        field is required!</span>
+                </div>
+                <br>
+                Twelfth Mark [%]
+                <div class="form-group">
+                    <input type="number" formControlName="TwelfthMark" class="form-control"
+                        placeholder="Enter the Twelfth Mark" />
+                        <span style="color: red"
+                        *ngIf="ApplicationRegForm.get('TwelfthMark')?.touched && ApplicationRegForm.get('TwelfthMark')?.invalid">Below 30% is subjected to failure!</span>
+                </div>
+                <br>
+                Twelfth No Of Attempts
+                <div class="form-group">
+                    <input type="number" formControlName="TwelfthNoOfAttempts" class="form-control"
+                        placeholder="Enter the Twelfth No Of Attempts" />
+                        <span style="color: red"
+                        *ngIf="ApplicationRegForm.get('TwelfthNoOfAttempts')?.touched && ApplicationRegForm.get('TwelfthNoOfAttempts')?.invalid">This
+                        field is required!</span>
+                </div>
+                <br>
+
+
+                <div class="form-group">
+                    <br>
+                    <button type="submit" class="btn btn-danger" rounded="true" [disabled]="ApplicationRegForm.invalid" (click)="OnSubmit()" onclick="location.reload();">Save Data</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,34 @@
+<app-error404 *ngIf="!(accountService.currentAdmin$ | async) as principal"></app-error404>
+
+<table class="table table-hover" *ngIf="(accountService.currentAdmin$ | async) as principal">
+
+    
+    <thead>
+        <tr>
+            <th scope="col">Staff ID</th>
+            <th scope="col">Staff Name</th>
+            
+
+            
+        </tr>
+    </thead>
+    <tbody *ngFor="let office of office">
+        <tr>
+            <td>{{office.officeID}}</td>
+            <td>{{office.staffInCharge}}</td>
+            
+
+
+           
+
+            <td> <button class="btn btn-primary" [routerLink]="['/officereg']">Add New</button> </td>
+            <td> <button type="button" class="btn btn-danger" [routerLink]="['/officeview']" (click)="onRowDelete(office.officeID)" >Delete</button></td>
+
+
+        </tr>
+        <tr>
+
+        </tr>
+
+    </tbody>
+</table>

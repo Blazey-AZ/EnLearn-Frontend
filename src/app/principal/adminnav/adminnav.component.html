@@ -1,0 +1,103 @@
+<div class="sidebar" *ngIf="(accountService.currentAdmin$ | async) as principal">
+  <header class="navbar-brand">
+  </header>
+  <nav class="sidebar_menu">
+    <button>
+      <span>
+        <i class="fa fa-home" aria-hidden="true"></i>
+        <span [routerLink]="['/adminnav']">Home</span>
+      </span>
+    </button>
+
+    <button>
+      <span>
+        <i class="fa fa-plus-square-o" aria-hidden="true"></i>
+        <div class="btn-group" dropdown>
+          <button id="button-basic" dropdownToggle type="button" class="btn dropdown-toggle"
+            aria-controls="dropdown-basic"> Register
+          </button>
+          <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-basic">
+            <button role="menuitem"><span><a class="dropdown-item" [routerLink]="['/coursereg']">Course Register</a></span></button>
+            <button role="menuitem"><span><a class="dropdown-item" [routerLink]="['/religionreg']">Religion Register</a></span></button>
+            <button role="menuitem"><span><a class="dropdown-item" [routerLink]="['/castereg']">Caste Register</a></span></button>
+            <button role="menuitem"><span><a class="dropdown-item" [routerLink]="['/statereg']">State Register</a></span></button>
+            <button role="menuitem"><span><a class="dropdown-item" [routerLink]="['/districtreg']">District Register</a></span></button>
+            <button role="menuitem"><span><a class="dropdown-item" [routerLink]="['/interviewerreg']">Interviewer Register</a></span></button>
+            <button role="menuitem"><span><a class="dropdown-item" [routerLink]="['/officereg']">Office Staff Register</a></span></button>
+
+
+
+          </ul>
+        </div>
+      </span>
+    </button>
+
+
+    <!-- <button>
+          
+					<span>
+						<i class="fa fa-plus-square-o" aria-hidden="true">
+						</i>
+						<span>Register</span>
+					</span>
+				</button> -->
+    <button>
+      <span>
+        <i class="fa fa-heart" aria-hidden="true"><em></em></i>
+        <div class="btn-group" dropdown>
+          <button id="button-basic" dropdownToggle type="button" class="btn dropdown-toggle"
+            aria-controls="dropdown-basic"> Views
+          </button>
+          <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-basic">
+            <button role="menuitem"><span><a class="dropdown-item" [routerLink]="['/courseview']">Course View</a></span></button>
+            <button role="menuitem"><span><a class="dropdown-item" [routerLink]="['/religionview']">Religion View</a></span></button>
+            <button role="menuitem"><span><a class="dropdown-item" [routerLink]="['/casteview']">Caste View</a></span></button>
+            <button role="menuitem"><span><a class="dropdown-item" [routerLink]="['/stateview']">State View</a></span></button>
+            <button role="menuitem"><span><a class="dropdown-item" [routerLink]="['/districtview']">District View</a></span></button>
+            <button role="menuitem"><span><a class="dropdown-item" [routerLink]="['/interviewerview']">Interviewer View</a></span></button>
+            <button role="menuitem"><span><a class="dropdown-item" [routerLink]="['/officeview']">Office Staff View</a></span></button>
+
+          </ul>
+        </div>
+      </span>
+    </button>
+    <button>
+      <span>
+        <i class="fa fa-user"></i>
+        <span [routerLink]="['/studentview']">Students View</span>
+      </span>
+    </button>
+    <button>
+      <span>
+        <i class="fa fa-file-text"></i>
+        <span [routerLink]="['/applicationsview']">Applications View</span>
+      </span>
+    </button>
+
+
+
+    <button>
+      <span>
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <div class="btn-group" dropdown>
+          <button id="button-basic" dropdownToggle type="button" class="btn dropdown-toggle"
+            aria-controls="dropdown-basic"> Reports
+          </button>
+          <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-basic">
+            <button role="menuitem"><span><a class="dropdown-item" href="#">Action</a></span></button>
+            <button role="menuitem"><span><a class="dropdown-item" href="#">Another action</a></span></button>
+            <button role="menuitem"><span><a class="dropdown-item" href="#">Something else here</a></span></button>
+            <button role="menuitem"><span><a class="dropdown-item" href="#">Separated link</a></span></button>
+          </ul>
+        </div>
+      </span>
+    </button>
+   
+    <button>
+      <span>
+        <i class="fa fa-bars"></i>
+        <span (click)="logout()">Logout</span>
+      </span>
+    </button>
+  </nav>
+</div>

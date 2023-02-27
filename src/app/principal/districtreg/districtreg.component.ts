@@ -1,3 +1,4 @@
+import { AccountServiceService } from './../../_services/account-service.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { LocationService } from 'src/app/_services/location.service';
@@ -10,7 +11,7 @@ import { LocationService } from 'src/app/_services/location.service';
 export class DistrictregComponent implements OnInit {
   data: string[] = [];
 
-  constructor(private fb: FormBuilder, private backendservice: LocationService) {
+  constructor(private fb: FormBuilder, private backendservice: LocationService, public accountService:AccountServiceService) {
 
    }
   DistrictRegisterForm = this.fb.group({

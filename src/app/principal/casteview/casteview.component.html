@@ -1,0 +1,34 @@
+<app-error404 *ngIf="!(accountService.currentAdmin$ | async) as principal"></app-error404>
+
+<table class="table table-hover" *ngIf="(accountService.currentAdmin$ | async) as principal">
+
+    
+    <thead>
+        <tr>
+            <th scope="col">Caste ID</th>
+            <th scope="col">Caste Name</th>
+            <th scope="col">Religion Name</th>
+
+            
+        </tr>
+    </thead>
+    <tbody *ngFor="let caste of caste">
+        <tr>
+            <td>{{caste.casteID}}</td>
+            <td>{{caste.casteName}}</td>
+            <td>{{caste.religionName}}</td>
+
+           
+
+            <td> <button class="btn btn-primary" [routerLink]="['/castereg']">Add New</button> </td>
+            <td> <button type="button" class="btn btn-danger" [routerLink]="['/casteview']" (click)="onRowDelete(caste.casteID)" >Delete</button>
+            </td>
+
+
+        </tr>
+        <tr>
+
+        </tr>
+
+    </tbody>
+</table>

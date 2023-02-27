@@ -1,0 +1,46 @@
+<app-error404 *ngIf="!(accountService.currentUser$ | async) as user"></app-error404>
+
+<div class="col-md-3 col-expand-lg bg-white navbar-light shadow p-0"
+    *ngIf="(accountService.currentUser$ | async) as user">
+
+    <div class="signup" *ngFor="let user of parentdetails">
+        <div class="signup-connect">
+            <h2>Parent View<br> [{{user.studentName}}]</h2><br>
+            <a class="btn btn-social btn-facebook"><i class="fa fa-star"></i>Student ID: {{user.studentID }} </a>
+
+
+
+            <br><br><br>
+        </div>
+        <div class="signup-classic">
+            <form class="form">
+
+
+                <fieldset class="username">
+                    <label>Twelfth Mark &nbsp; &nbsp; &nbsp; &nbsp;</label>
+                    <input type="text" placeholder="{{user.father}}" readonly />
+                </fieldset>
+                <fieldset class="username">
+                    <label>Tenth Year &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;</label>
+                    <input type="text" placeholder="{{user.mother}}" readonly />
+                </fieldset>
+                <fieldset class="username">
+                    <label>Twelfth Mark &nbsp; &nbsp; &nbsp; &nbsp;</label>
+                    <input type="text" placeholder="{{user.fOccupation}}" readonly />
+                </fieldset>
+                <fieldset class="username">
+                    <label>Tenth Year &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;</label>
+                    <input type="text" placeholder="{{user.mOccupation}}" readonly />
+                </fieldset>
+                <fieldset class="username">
+                    <label>Twelfth Year &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</label>
+                    <input type="text" placeholder="{{user.fContact}}" readonly />
+                </fieldset>
+                <fieldset class="username">
+                    <label>Twelfth Year &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</label>
+                    <input type="text" placeholder="{{user.mContact}}" readonly />
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>

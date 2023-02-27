@@ -9,18 +9,17 @@
 		<input type="password" name="password" [(ngModel)]="model.password" required>
 		<label for="">Password</label>
 	</div>
-	<a >Login
+	<a (click)="login()" [routerLink]="['/adminnav']" >Login
 		<span></span>
 		<span></span>
 		<span></span>
 		<span></span>
-		<button type="submit" class="submit" (click)="login()"></button> 
 	</a>
 	
 </form>
 <div class="user-box" *ngIf="loggedIn">
 	
-	<button type="submit" (click)="logout()" class="buttonz"> Logout</button>
+	<button type="submit" (click)="logout()" class="button"> Logout</button>
 	</div>
 </div>
 

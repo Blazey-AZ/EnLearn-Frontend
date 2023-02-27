@@ -30,9 +30,7 @@ export class CourseService {
     return this.http.post<any>(this.baseUrl+"course/editcourse/", suii);
   } 
 
-  // deleteCourse(helpme: any): Observable<any>{
-  //   return this.http.delete<any>(this.baseUrl+"course/coursedelete/",helpme);
-  // }
+  
    deleteCourse(courseID: number): Observable<null>{
     return this.http.delete<any>(this.baseUrl+"course/coursedelete/"+courseID);
   }

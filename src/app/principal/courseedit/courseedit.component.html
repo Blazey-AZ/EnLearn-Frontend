@@ -1,4 +1,7 @@
-<div class="d-flex p-2"><h1 >Course Edit</h1></div>
+<div class="d-flex p-2" *ngIf="!(accountService.currentAdmin$ | async) as principal">
+<app-error404 *ngIf="!(accountService.currentAdmin$ | async) as principal"></app-error404>
+
+    <h1 >Course Edit</h1></div>
 <div class="card">
         <p-table [value]="courses" dataKey="courseid" editMode="row">
             <ng-template pTemplate="header">

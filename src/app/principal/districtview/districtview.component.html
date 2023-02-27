@@ -1,0 +1,34 @@
+<app-error404 *ngIf="!(accountService.currentAdmin$ | async) as principal"></app-error404>
+
+<table class="table table-hover" *ngIf="(accountService.currentAdmin$ | async) as principal">
+
+    
+    <thead>
+        <tr>
+            <th scope="col">District ID</th>
+            <th scope="col">District Name</th>
+            <th scope="col">State Name</th>
+
+            
+        </tr>
+    </thead>
+    <tbody *ngFor="let district of dist">
+        <tr>
+            <td>{{district.districtID}}</td>
+            <td>{{district.districtName}}</td>
+            <td>{{district.stateName}}</td>
+
+           
+
+            <td> <button class="btn btn-primary" [routerLink]="['/districtreg']">Add New</button> </td>
+            <td> <button type="button" class="btn btn-danger"  (click)="onRowDelete(district.districtID)" >Delete</button>
+            </td>
+
+
+        </tr>
+        <tr>
+
+        </tr>
+
+    </tbody>
+</table>

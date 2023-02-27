@@ -1,0 +1,48 @@
+<div class="supporting">
+    <div class="container">
+        <div class="col">
+            <img src="https://www.svgrepo.com/show/382235/call-centre-headphones-support.svg">
+            <h2>Call Us</h2>
+            <p>+91-9539603645<br>
+                +91-9497251731<br>
+                +91-9747832703</p>
+            <a class="btn-default"> Commitment</a>
+
+        </div>
+        <div class="col">
+            <img src="https://www.svgrepo.com/show/475318/address-book.svg">
+            <h2>Address</h2>
+            <p>Kolapra P.O <br>
+                Thodupuzha, 686576<br>
+                Kerala, India</p>
+            <a class="btn-default">Integrity</a>
+
+        </div>
+        <div class="col">
+            <img src="https://www.svgrepo.com/show/415749/email-inbox-letter.svg">
+            <h2>Email Us</h2>
+            <p>office@enlearn.com <br> principal@enlearn.com <br> blank@enlearn.com</p>
+            <a class="btn-default">Excellence</a>
+
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>
+<h2 class="text-center">[Our Hon. Leaders]</h2>
+
+<div class="container p-4">
+<carousel [isAnimated]="true" [itemsPerSlide]="itemsPerSlide" [singleSlideOffset]="true"
+[startFromIndex]="6" [interval]="2500">
+  <slide *ngFor="let slide of slides;">
+    <img [src]="slide.image" alt="image slide" style="display: block; width: 400px;height: 350px; border-radius: 100px;">
+    <div class="carousel-caption">
+      <h4>{{slide.data}}</h4>
+    </div>
+  </slide>
+</carousel>
+</div>
+<div class="footer">
+    <div class="container">
+      <p>&copy; Broadway 2015</p>
+    </div>
+  </div>

@@ -1,0 +1,24 @@
+<app-error404 *ngIf="!(accountService.currentAdmin$ | async) as principal"></app-error404>
+
+<div class="container" *ngIf="(accountService.currentAdmin$ | async) as principal">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h3 style="text-align: center;">Religion Register</h3>
+            <form [formGroup]='ReligionRegForm'>
+                Religion Name
+                <div class="form-group">
+                    <input type="text" formControlName="ReligionName" class="form-control"
+                        placeholder="Enter the Religion Name" />
+                </div>
+                <br>
+               
+               
+               
+                <div class="form-group">
+                    <br>
+                    <button type="submit" class="btn btn-danger" rounded="true" (click)="OnSubmit()" onclick="location.reload();">Save Data</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

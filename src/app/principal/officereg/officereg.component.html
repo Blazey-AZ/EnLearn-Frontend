@@ -1,0 +1,38 @@
+<app-error404 *ngIf="!(accountService.currentAdmin$ | async) as principal"></app-error404>
+
+<div class="container" *ngIf="(accountService.currentAdmin$ | async) as principal">
+    
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h3 style="text-align: center;">Office Register</h3>
+            <form [formGroup]='OfficeRegForm'>
+               <label> Staff Name</label>
+                <div class="form-group">
+                    <input type="text" formControlName="StaffInCharge" class="form-control"
+                        placeholder="Enter Staff In Charge Name" />
+                </div>
+                <br>
+                
+                <br><label> Username</label>
+                <div class="form-group">
+                    <input type="text" formControlName="Username" class="form-control"
+                        placeholder="Enter the Username" required/>
+                </div>
+                <br><label> Password</label>
+                <div class="form-group">
+                    <input type="text" formControlName="Password" class="form-control"
+                        placeholder="Enter the Password" />
+                </div>
+                <br>
+
+               
+               
+               
+                <div class="form-group">
+                    <br>
+                    <button type="submit" class="btn btn-danger" rounded="true" (click)="OnSubmit()" onclick="location.reload();">Save Data</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

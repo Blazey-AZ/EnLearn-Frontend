@@ -1,0 +1,92 @@
+<div class="col-md-3 col-expand-lg bg-white navbar-light shadow p-0">
+    
+    <div class="signup" *ngFor="let apply of applications">
+      <div class="signup-connect">
+        <h2>APPLICATIONDETAILS</h2>
+        <h2>[{{apply.applicationStatus}}]</h2>
+        <a class="btn btn-social btn-facebook"><i class="fa fa-star"></i>Student Name: {{apply.studentName }} |
+          <br>Status: {{apply.applicationStatus}} </a>
+        <a class="btn btn-social btn-facebook"><i class="fa fa-star"></i> Student ID: {{apply.studentID}}</a>
+        <a class="btn btn-social btn-facebook"><i class="fa fa-star"></i> Application No: {{apply.applicationNo}}</a>
+        <a class="btn btn-social btn-facebook"><i class="fa fa-star"></i> Preferred Course: {{apply.firstOption}}</a>
+        <a class="btn btn-social btn-facebook"><i class="fa fa-star"></i> Backup Courses 1: {{apply.secondOption}} |
+          2: {{apply.thirdOption}}</a>
+  
+        <br><br><br>
+  
+  
+  
+  
+        <a (click)="enroll(apply.applicationNo)" onclick="location.reload();" class="btn btn-social btn-linkedin"><i class="fa fa-check" ></i> Enroll
+          Student</a>
+        <a (click)="reject(apply.applicationNo)"  onclick="location.reload();" class="btn btn-social btn-google"><i class="fa fa-thumbs-down"></i> Reject
+          Student</a>
+      </div>
+      <div class="signup-classic">
+        <form class="form">
+  
+          <fieldset class="username">
+            <label>Tenth Board</label>
+            <input type="text" placeholder="{{apply.tenthBoard}}" readonly />
+          </fieldset>
+          <fieldset class="username">
+            <label>Tenth Institution</label>
+            <input type="text" placeholder="{{apply.tenthInstitution}}" readonly />
+          </fieldset>
+          <fieldset class="username">
+            <label>Tenth Mark</label>
+            <input type="text" placeholder="{{apply.tenthMark}}" readonly />
+          </fieldset>
+          <fieldset class="username">
+            <label>Tenth No of Attempts</label>
+            <input type="text" placeholder="{{apply.tenthNoOfAttempts}}" readonly />
+          </fieldset>
+          <fieldset class="username">
+            <label>Tenth Place</label>
+            <input type="text" placeholder="{{apply.tenthPlace}}" readonly />
+          </fieldset>
+          <fieldset class="username">
+            <label>Tenth State</label>
+            <input type="text" placeholder="{{apply.tenthState}}" readonly />
+          </fieldset>
+          <fieldset class="username">
+            <label>Tenth Year</label>
+            <input type="text" placeholder="{{apply.tenthYear | date}}" readonly />
+          </fieldset>
+        </form>
+      </div>
+      <div class="signup-classic">
+        <form class="form">
+  
+          <fieldset class="username">
+            <label>Twelfth Board</label>
+            <input type="text" placeholder="{{apply.twelfthBoard}}" readonly />
+          </fieldset>
+          <fieldset class="username">
+            <label>Twelfth Institution</label>
+            <input type="text" placeholder="{{apply.twelfthInstitution}}" readonly />
+          </fieldset>
+          <fieldset class="username">
+            <label>Twelfth Mark</label>
+            <input type="text" placeholder="{{apply.twelfthMark}}" readonly />
+          </fieldset>
+          <fieldset class="username">
+            <label>Twelfth No of Attempts</label>
+            <input type="text" placeholder="{{apply.twelfthNoOfAttempts}}" readonly />
+          </fieldset>
+          <fieldset class="username">
+            <label>Twelfth Place</label>
+            <input type="text" placeholder="{{apply.twelfthPlace}}" readonly />
+          </fieldset>
+          <fieldset class="username">
+            <label>Twelfth State</label>
+            <input type="text" placeholder="{{apply.twelfthState}}" readonly />
+          </fieldset>
+          <fieldset class="username">
+            <label>Twelfth Year</label>
+            <input type="text" placeholder="{{apply.twelfthYear | date}}" readonly />
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>

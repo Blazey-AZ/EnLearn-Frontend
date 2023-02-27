@@ -1,3 +1,4 @@
+import { AccountServiceService } from './../../_services/account-service.service';
 import { Course } from 'src/app/_models/course';
 import { CourseService } from './../../_services/course.service';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
@@ -17,7 +18,7 @@ export class CourseeditComponent implements OnInit {
   localCache = new Map<number, Course>();
 
 
-  constructor(private courseService: CourseService) { }
+  constructor(private courseService: CourseService, public accountService: AccountServiceService) { }
 
   ngOnInit(): void {
     this.loadCourses();

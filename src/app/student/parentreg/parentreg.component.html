@@ -1,0 +1,50 @@
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h3 style="text-align: center;">Student Register</h3>
+            <form [formGroup]='ParentRegForm'>
+                Father Name
+                <div class="form-group">
+                    <input type="text" formControlName="Father" class="form-control"
+                        placeholder="Enter the Father's Name" />
+                </div>
+                <br>
+                Mother Name
+                <div class="form-group">
+                    <input type="text" formControlName="Mother" class="form-control"
+                        placeholder="Enter the Mother's Name" />
+                </div>
+                <br>
+                Father Occupation
+                <div class="form-group">
+                    <input type="text" formControlName="FOccupation" class="form-control" placeholder="Enter your Father's Occupation" />
+                </div>
+                <br>
+                Mother Occupation
+                <div class="form-group">
+                    <input type="text" formControlName="MOccupation" class="form-control"
+                        placeholder="Enter the Mother's Occupation" />
+                </div>
+                <br>
+                Father Contact
+                <div class="form-group">
+                    <input type="number" formControlName="FContact" class="form-control"
+                        placeholder="Enter the Father's Contact" />
+                </div>
+                <br>
+                Mother Contact
+                <div class="form-group">
+                    <input type="number" formControlName="MContact" class="form-control"
+                        placeholder="Enter the Mother's Contact" />
+                </div>
+                <br>
+               
+                <div class="form-group">
+                    <br>
+                    <button type="submit" class="btn btn-danger" rounded="true" (click)="OnSubmit()">Save Data</button> 
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

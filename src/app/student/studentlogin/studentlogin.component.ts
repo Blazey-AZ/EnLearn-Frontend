@@ -37,7 +37,7 @@ export class StudentloginComponent implements OnInit {
           this.router.navigateByUrl('/userhome')
           
         },
-        error: error => this.toastr.error(error.error)
+        error: error => this.toastr.error("Enter correct username/password")
       })
   }
   logout() {

@@ -1,0 +1,53 @@
+<app-error404 *ngIf="!(accountService.currentAdmin$ | async) as principal"></app-error404>
+
+<table class="table table-hover" *ngIf="(accountService.currentAdmin$ | async) as principal">
+    <thead>
+        <tr>
+            <th scope="col">Student ID</th>
+            <th scope="col">Student Name</th>
+            <th scope="col">Personal ID</th>
+            <th scope="col">Image</th>
+            <th scope="col">Name Of Father</th>
+            <th scope="col">Date Of Birth</th>
+            <th scope="col">Nationality</th>
+            <th scope="col">Annual Income</th>
+            <th scope="col">Religion Name</th>
+            <th scope="col">Caste Name</th>
+            <th scope="col">House Name</th>
+            <th scope="col">Place</th>
+            <th scope="col">State Name</th>
+            <th scope="col">District Name</th>
+            <th scope="col">Pincode</th>
+            <th scope="col">Email</th>
+
+        </tr>
+    </thead>
+    <tbody *ngFor="let user of users">
+        <tr>
+            <td>{{user.studentID}}</td>
+            <td>{{user.studentName}}</td>
+            <td>{{user.personalID}}</td>
+            <td><img class="img img-fluid" src="http://localhost:5001/{{user.image}}" style="height: 150px; width: 400px;" /></td>
+            <td>{{user.nameOfFather}}</td>
+            <td>{{user.dateOfBirth}}</td>
+            <td>{{user.nationality}}</td>
+            <td>{{user.annualIncome}}</td>
+            <td>{{user.religionName}}</td>
+            <td>{{user.casteName}}</td>
+            <td>{{user.houseName}}</td>
+            <td>{{user.place}}</td>
+            <td>{{user.stateName}}</td>
+            <td>{{user.districtName}}</td>
+            <td>{{user.pincode}}</td>
+            <td>{{user.email}}</td>
+
+
+            <td> <button class="btn btn-primary"  routerLink="/studentview">Student Info</button> </td>
+
+        </tr>
+        <tr>
+
+        </tr>
+
+    </tbody>
+</table>

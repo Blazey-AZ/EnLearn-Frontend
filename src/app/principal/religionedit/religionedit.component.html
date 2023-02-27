@@ -1,0 +1,35 @@
+<div class="d-flex p-2" *ngIf="!(accountService.currentAdmin$ | async) as principal">
+    <app-error404 *ngIf="!(accountService.currentAdmin$ | async) as principal"></app-error404>
+    
+        <h1 >Religion Edit</h1></div>
+    <div class="card">
+            <p-table [value]="religion" dataKey="religionID" editMode="row">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>Religion Name</th>
+                        
+                        <th style="width:8rem"></th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-religion let-editing="editing" let-ri="rowIndex">
+                    <tr [pEditableRow]="religion">
+                        <td pEditableColumn>
+                            <p-cellEditor>
+                                <ng-template pTemplate="input">
+                                    <input pInputText type="text" [(ngModel)]="religion.religionName" required>
+                                </ng-template>
+                                <ng-template pTemplate="output">
+                                    {{religion.religionName}}
+                                </ng-template>
+                            </p-cellEditor>
+                        </td>
+                       
+                        <td style="text-align:center">
+                            <button *ngIf="editing" pButton pRipple type="button" pInitEditableRow icon="pi pi-pencil" (click)="onRowEditInit(religion)" class="p-button-rounded p-button-text"></button>
+                            <button *ngIf="!editing" pButton pRipple type="button" pSaveEditableRow icon="pi pi-check" (click)="onRowEditSave(religion)" class="p-button-rounded p-button-text p-button-success p-mr-2"></button>
+                            <button *ngIf="!editing" pButton pRipple type="button" pCancelEditableRow icon="pi pi-times" (click)="onRowEditCancel(religion, ri)" class="p-button-rounded p-button-text p-button-danger"></button>
+                        </td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>

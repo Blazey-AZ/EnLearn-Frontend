@@ -23,7 +23,7 @@ export class AppComponent implements OnInit {
     this.spinner.show().then(()=> {
       setTimeout(()=>{
         this.spinner.hide();
-      },2000)
+      },1000)
     })
   }
 

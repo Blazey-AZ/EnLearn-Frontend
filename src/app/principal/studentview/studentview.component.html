@@ -1,0 +1,31 @@
+<app-error404 *ngIf="!(accountService.currentAdmin$ | async) as principal"></app-error404>
+
+<table class="table table-hover" *ngIf="(accountService.currentAdmin$ | async) as principal">
+    <thead>
+        <tr>
+            <th scope="col">Student ID</th>
+            <th scope="col">Student Name</th>
+            <th scope="col">Contact Number</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Parent Contact</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let user of users">
+        <tr>
+            <td>{{user.studentID}}</td>
+            <td>{{user.studentName}}</td>
+            <td>{{user.contactNumber}}</td>
+            <td>{{user.gender}}</td>
+            <td>{{user.parentContact}}</td>
+
+            <td> <button class="btn btn-primary"  routerLink="/personaldetailview/{{user.studentID}}">View Personal Info</button> </td>
+
+            <!-- <p-button  (onChange)="onShowUser(user)">View Personal Info</p-button> -->
+
+        </tr>
+        <tr>
+
+        </tr>
+
+    </tbody>
+</table>

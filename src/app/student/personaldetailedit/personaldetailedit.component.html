@@ -1,0 +1,74 @@
+<app-error404 *ngIf="!(accountService.currentUser$ | async) as user"></app-error404>
+
+<div class="col-md-3 col-expand-lg bg-white navbar-light shadow p-0"
+  *ngIf="(accountService.currentUser$ | async) as user">
+
+  <div class="signup" *ngFor="let user of personaldetails">
+    <div class="signup-connect">
+      <h2>Personal Details View</h2>
+      <img class="img img-fluid" src="http://localhost:5001/{{user.image}}" />
+      <a class="btn btn-social btn-facebook"><i class="fa fa-star"></i>Student ID: {{user.studentID }} | Student Name: {{user.studentName}} </a>
+      <!-- <a class="btn btn-social btn-facebook"><i class="fa fa-star"></i> Student Name: {{user.studentName}}</a> -->
+      <a class="btn btn-social btn-facebook"><i class="fa fa-star"></i> Email: {{user.email}} </a>
+      <a class="btn btn-social btn-facebook"><i class="fa fa-star"></i> DOB: {{user.dateOfBirth | date}} </a>
+      <a class="btn btn-social btn-twitter" [routerLink]="['/personaldetails']"><i class="fa fa-star"></i> Edit Profile</a>
+
+      <br><br><br>
+    </div>
+    <div class="signup-classic">
+          <form class="form">
+
+          
+            <fieldset class="username">
+              <label>Name of Father</label>
+              <input type="text" placeholder="{{user.nameOfFather}}" readonly />
+            </fieldset>
+            
+            <fieldset class="username">
+              <label>Nationality</label>
+              <input type="text" placeholder="{{user.nationality}}" readonly />
+            </fieldset>
+            <fieldset class="username">
+              <label>Annual Income</label>
+              <input type="text" placeholder="{{user.annualIncome}}" readonly />
+            </fieldset>
+            <fieldset class="username">
+              <label>Religion Name</label>
+              <input type="text" placeholder="{{user.religionName}}" readonly />
+            </fieldset>
+            <fieldset class="username">
+              <label>Caste Name</label>
+              <input type="text" placeholder="{{user.casteName}}" readonly />
+            </fieldset>
+          </form>
+        </div>
+        <div class="signup-classic">
+          <form class="form">
+
+            <fieldset class="username">
+              <label>State Name</label>
+              <input type="text" placeholder="{{user.stateName}}" readonly />
+            </fieldset>
+            <fieldset class="username">
+              <label>District Name</label>
+              <input type="text" placeholder="{{user.districtName}}" readonly />
+            </fieldset>
+            <fieldset class="username">
+              <label>House Name</label>
+              <input type="text" placeholder="{{user.houseName}}" readonly />
+            </fieldset>
+            <fieldset class="username">
+              <label>Residence</label>
+              <input type="text" placeholder="{{user.place}}" readonly />
+            </fieldset>
+            <fieldset class="username">
+              <label>Pincode</label>
+              <input type="text" placeholder="{{user.pincode}}" readonly />
+            </fieldset>
+            
+
+
+          </form>
+        </div>
+      </div>
+    </div>

@@ -1,3 +1,4 @@
+import { AccountServiceService } from './../../_services/account-service.service';
 import { RouterModule } from '@angular/router';
 import { ConfirmationService } from 'primeng/api';
 import { CourseService } from 'src/app/_services/course.service';
@@ -14,7 +15,7 @@ import { Course } from 'src/app/_models/course';
 export class CourseviewComponent implements OnInit {
   courses: Course[] = [];
 
-  constructor(private courseService: CourseService, private router: RouterModule) { }
+  constructor(private courseService: CourseService, private router: RouterModule, public accountService: AccountServiceService) { }
 
   ngOnInit(): void {
     this.loadCourses();
@@ -39,10 +40,6 @@ export class CourseviewComponent implements OnInit {
   }
   
 
-  // loadCourse(){
-  //   this.courseService.getCourse().subscribe({
-  //     next: courses => this.courses = courses 
-  //   })
-  // }
+
 
 

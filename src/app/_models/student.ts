@@ -1,4 +1,9 @@
 export interface Student {
-    
-   studentname: string;
+
+   
+   studentID: number;
+   studentName: string;
+   contactNumber: string;
+   gender: string;
+   parentContact: string;
 }

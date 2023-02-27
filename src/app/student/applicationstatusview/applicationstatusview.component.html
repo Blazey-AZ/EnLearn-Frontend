@@ -1,0 +1,73 @@
+<app-error404 *ngIf="!(accountService.currentUser$ | async) as user"></app-error404>
+
+<div class="col-md-3 col-expand-lg bg-white navbar-light shadow p-0"
+  *ngIf="(accountService.currentUser$ | async) as user">
+
+  <div class="signup" *ngFor="let user of applicationdetails">
+    <div class="signup-connect">
+      <h2>Application Status View [{{user.applicationStatus}}]</h2><br>
+      <a class="btn btn-social btn-facebook"><i class="fa fa-star"></i>Student ID: {{user.studentID }} | Student Name: {{user.studentName}} </a>
+      <a class="btn btn-social btn-facebook"><i class="fa fa-star"></i> Application Number: {{user.applicationNo}} </a>
+      <a class="btn btn-social btn-twitter"><i class="fa fa-star"></i> Application Status: {{user.applicationStatus}} </a>
+
+
+      <br><br><br>
+    </div>
+    <div class="signup-classic">
+          <form class="form">
+
+          
+            <fieldset class="username">
+              <label>Approved Course</label>
+              <input type="text" placeholder="{{user.firstOption}}" readonly />
+            </fieldset>
+            
+            <fieldset class="username">
+              <label>Tenth Mark &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</label>
+              <input type="text" placeholder="{{user.tenthMark}}" readonly />
+            </fieldset>
+            <fieldset class="username">
+              <label>Twelfth Mark  &nbsp; &nbsp; &nbsp; &nbsp;</label>
+              <input type="text" placeholder="{{user.twelfthMark}}" readonly />
+            </fieldset>
+            <fieldset class="username">
+              <label>Tenth Year &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;</label>
+              <input type="text" placeholder="{{user.tenthYear | date}}" readonly />
+            </fieldset>
+            <fieldset class="username">
+              <label>Twelfth Year &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</label>
+              <input type="text" placeholder="{{user.twelfthYear | date}}" readonly />
+            </fieldset>
+          </form>
+        </div>
+        <!-- <div class="signup-classic">
+          <form class="form">
+
+            <fieldset class="username">
+              <label>Twelfth Board</label>
+              <input type="text" placeholder="{{user.stateName}}" readonly />
+            </fieldset>
+            <fieldset class="username">
+              <label>Twelfth Institution</label>
+              <input type="text" placeholder="{{user.districtName}}" readonly />
+            </fieldset>
+            <fieldset class="username">
+              <label>Twelfth Mark</label>
+              <input type="text" placeholder="{{user.houseName}}" readonly />
+            </fieldset>
+            <fieldset class="username">
+              <label>Twelfth No of Attempts</label>
+              <input type="text" placeholder="{{user.place}}" readonly />
+            </fieldset>
+            <fieldset class="username">
+              <label>Twelfth Place</label>
+              <input type="text" placeholder="{{user.pincode}}" readonly />
+            </fieldset>
+            
+             
+
+
+          </form>
+        </div> -->
+      </div>
+    </div>

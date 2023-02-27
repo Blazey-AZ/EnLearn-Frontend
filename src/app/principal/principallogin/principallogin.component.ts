@@ -19,7 +19,7 @@ export class PrincipalloginComponent implements OnInit {
   }
 
   getCurrentPrincipal(){
-    this.accountService.currentUser$.subscribe({
+    this.accountService.currentAdmin$.subscribe({
       next: principal => this.loggedIn = !!principal,
       error: error => console.log(error) 
     })

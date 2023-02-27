@@ -1,0 +1,27 @@
+<div class="login-box">
+	<h2>Login</h2>
+<form #loginForm="ngForm" autocomplete="off">
+	<div class="user-box">
+		<input type="text" name="username" [(ngModel)]="model.Username" required>
+		<label>Username</label>
+	</div>
+	<div class="user-box">
+		<input type="password" name="password" [(ngModel)]="model.Password" required>
+		<label for="">Password</label>
+	</div>
+	<a (click)="login()" >Login
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+	</a>
+	
+</form>
+<div class="user-box" *ngIf="loggedIn">
+	
+	<button type="submit" (click)="logout()" class="button"> Logout</button>
+	</div>
+</div>
+
+
+

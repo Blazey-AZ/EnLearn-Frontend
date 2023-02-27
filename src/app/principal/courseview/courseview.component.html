@@ -1,4 +1,8 @@
-<table class="table table-hover">
+<app-error404 *ngIf="!(accountService.currentAdmin$ | async) as principal"></app-error404>
+
+<table class="table table-hover" *ngIf="(accountService.currentAdmin$ | async) as principal">
+
+    
     <thead>
         <tr>
             <th scope="col">SL.NO</th>

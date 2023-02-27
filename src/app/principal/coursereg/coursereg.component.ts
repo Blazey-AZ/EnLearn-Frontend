@@ -1,3 +1,4 @@
+import { AccountServiceService } from './../../_services/account-service.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { CourseService } from 'src/app/_services/course.service';
@@ -9,7 +10,7 @@ import { CourseService } from 'src/app/_services/course.service';
 })
 export class CourseregComponent implements OnInit {
 
-  constructor(private fb: FormBuilder, private backendservice: CourseService) { }
+  constructor(private fb: FormBuilder, private backendservice: CourseService, public accountService: AccountServiceService) { }
   CourseRegisterForm = this.fb.group({
     CourseName: [''],
     CourseShortName: [''],

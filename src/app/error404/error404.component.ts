@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Error404Component implements OnInit {
 
-  constructor() { }
+
+  public readonly previousPage : string | null
+  constructor(private readonly router : Router) {
+    var previousNavigation = this.router.getCurrentNavigation()?.previousNavigation;
+    console.log(previousNavigation)
+    if(previousNavigation != null && previousNavigation.finalUrl != null){
+      this.previousPage = previousNavigation.finalUrl.toString();
+    }else {
+      this.previousPage = null;
+    }
+  }
 
   ngOnInit(): void {
+  }
+  sentToPrevious() {
+    this.router.navigate([this.previousPage])
   }
 
 }

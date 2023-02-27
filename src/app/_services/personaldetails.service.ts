@@ -29,6 +29,19 @@ export class PersonaldetailsService {
   getdistrictdata() : Observable<any[]> {
     return this.http.get<any[]>("http://localhost:5001/api/PersonalDetail/getdistrict")
   }
+  getcastename(rn: string) : Observable<any[]> {
+    return this.http.get<any[]>("http://localhost:5001/api/PersonalDetail/getreligionbyname/"+rn)
+  }
+  getdistrictname(sn: string) : Observable<any[]> {
+    return this.http.get<any[]>("http://localhost:5001/api/PersonalDetail/getstatebyname/"+sn)
+  }
+  uploadImage() : Observable<any[]> {
+    return this.http.get<any[]>("http://localhost:5001/api/PersonalDetail/upload")
+  }
+
+  getPersonalInfo(pid: number): Observable<any[]> {
+    return this.http.get<any[]>("http://localhost:5001/api/PersonalDetail/getpersonalinfoall/" + pid)
+  }
 
 
 }

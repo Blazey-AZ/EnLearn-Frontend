@@ -1,0 +1,49 @@
+<table class="table table-hover" *ngIf="!(accountService.currentInterviewer$ | async) as interviewer">
+
+    <thead>
+        <tr>
+            <th scope="col">Application NO</th>
+            <th scope="col">Student ID</th>
+            <th scope="col">Student Name</th>
+            <th scope="col">First Option</th>
+            <th scope="col">Second Option</th>
+            <th scope="col">Third Option</th>
+            <th scope="col">Tenth Institution</th>
+            <th scope="col">Tenth Mark</th>
+            <th scope="col">Tenth No Of Attempts</th>
+            <th scope="col">Twelfth Institution</th>
+            <th scope="col">Twelfth Mark</th>
+            <th scope="col">Twelfth No Of Attempts</th>
+            <th scope="col">Date</th>
+            <th scope="col">Application Status</th>
+
+        </tr>
+    </thead>
+    <tbody *ngFor="let apply of applications">
+        <tr>
+            <td>{{apply.applicationNo}}</td>
+            <td>{{apply.studentID}}</td>
+            <td>{{apply.studentName}}</td>
+            <td>{{apply.firstOption}}</td>
+            <td>{{apply.secondOption}}</td>
+            <td>{{apply.thirdOption}}</td>
+            <td>{{apply.tenthInstitution}}</td>
+            <td>{{apply.tenthMark}}</td>
+            <td>{{apply.tenthNoOfAttempts}}</td>
+            <td>{{apply.twelfthInstitution}}</td>
+            <td>{{apply.twelfthMark}}</td>
+            <td>{{apply.twelfthNoOfAttempts}}</td>
+            <td>{{apply.date}}</td>
+            <td>{{apply.applicationStatus}}</td>
+            
+
+
+            <td> <button class="btn btn-primary"  routerLink="/viewapplications/{{apply.applicationNo}}">Application Info</button> </td>
+
+        </tr>
+        <tr>
+
+        </tr>
+
+    </tbody>
+</table>

@@ -1,0 +1,45 @@
+<div class="d-flex p-2" *ngIf="!(accountService.currentAdmin$ | async) as principal">
+    <app-error404 *ngIf="!(accountService.currentAdmin$ | async) as principal"></app-error404>
+    
+        <h1 >Religion Edit</h1></div>
+    <div class="card">
+            <p-table [value]="state" dataKey="stateID" editMode="row">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>Religion ID</th>
+
+                        <th>Religion Name</th>
+                        
+                        <th style="width:8rem"></th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-state let-editing="editing" let-ri="rowIndex">
+                    <tr [pEditableRow]="state">
+                        <td pEditableColumn>
+                            <p-cellEditor>
+                               
+                                <ng-template pTemplate="output">
+                                    {{state.stateID}}
+                                </ng-template>
+                            </p-cellEditor>
+                        </td>
+                        <td pEditableColumn>
+                            <p-cellEditor>
+                                <ng-template pTemplate="input">
+                                    <input pInputText type="text" [(ngModel)]="state.stateName" required>
+                                </ng-template>
+                                <ng-template pTemplate="output">
+                                    {{state.stateName}}
+                                </ng-template>
+                            </p-cellEditor>
+                        </td>
+                       
+                        <td style="text-align:center">
+                            <button *ngIf="editing" pButton pRipple type="button" pInitEditableRow icon="pi pi-pencil" (click)="onRowEditInit(state)" class="p-button-rounded p-button-text"></button>
+                            <button *ngIf="!editing" pButton pRipple type="button" pSaveEditableRow icon="pi pi-check" (click)="onRowEditSave(state)" class="p-button-rounded p-button-text p-button-success p-mr-2"></button>
+                            <button *ngIf="!editing" pButton pRipple type="button" pCancelEditableRow icon="pi pi-times" (click)="onRowEditCancel(state, ri)" class="p-button-rounded p-button-text p-button-danger"></button>
+                        </td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
