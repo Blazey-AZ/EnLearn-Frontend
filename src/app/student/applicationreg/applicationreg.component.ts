@@ -48,7 +48,7 @@ export class ApplicationregComponent implements OnInit {
     })
   }
 
-  onMe() {
+  onMe2() {
     this.applicationService.getcoursedata().subscribe(
       {
         next: val => {
@@ -75,7 +75,7 @@ export class ApplicationregComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.onMe();
+    this.onMe2();
 
   }
 }
