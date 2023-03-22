@@ -36,13 +36,17 @@
                 <a class="nav-link active" [routerLink]="['/contactus']"
                 *ngIf="!(accountService.currentUser$ | async)">Contact Us</a>
             <div class="btn-group" dropdown>
-                <a class="nav-link dropdown-toggle" dropdownToggle *ngIf="(accountService.currentUser$ | async)">Personal Details</a>
+                <a class="nav-link dropdown-toggle" dropdownToggle *ngIf="(accountService.currentUser$ | async)">Other Details</a>
                 <ul id="dropdown-autoclose1" *dropdownMenu class="dropdown-menu" role="menu"
                     aria-labelledby="button-autoclose1">
                     <li role="menuitem"><a class="dropdown-item" [routerLink]="['/personaldetails']" >Personal Details
                             Register</a></li>
                     <li role="menuitem"><a class="dropdown-item" [routerLink]="['/personaldetailsview']">Personal
                             Details View</a></li>
+                            <li role="menuitem"><a class="dropdown-item" [routerLink]="['/parentreg']" >Parent Details
+                                Register</a></li>
+                        <li role="menuitem"><a class="dropdown-item" [routerLink]="['/parentview']">Parent
+                                Details View</a></li>
                     <!-- <li role="menuitem"><a class="dropdown-item"[routerLink]="['/guesthome']" >Something else here</a></li> -->
                 </ul>
             </div>
