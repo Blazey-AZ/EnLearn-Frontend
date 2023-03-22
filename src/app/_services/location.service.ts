@@ -1,3 +1,4 @@
+import { ToastrService } from 'ngx-toastr';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -8,10 +9,16 @@ import { State } from '../_models/state';
 })
 export class LocationService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private toastr: ToastrService) { }
   insertstatedata(data: any) {
     this.http.post("http://localhost:5001/api/location/statereg",
-      data).toPromise().then(result => { console.log(result); })
+      data).subscribe({
+        next: () => {
+        console.log(data),
+        this.toastr.success("Success");
+        },
+        error: error => this.toastr.error("Error!")
+        })
   }
 
   getstatedata() : Observable<any[]> {
@@ -24,7 +31,13 @@ export class LocationService {
   insertdistrictdata(data: any) {
     console.log(data);
     this.http.post("http://localhost:5001/api/location/districtreg",
-      data).subscribe();
+      data).subscribe({
+        next: () => {
+        console.log(data),
+        this.toastr.success("Success");
+        },
+        error: error => this.toastr.error("Error!")
+        })
   }
   deleteState(stID: number): Observable<null>{
     return this.http.delete<any>("http://localhost:5001/api/location/statedelete/"+stID);

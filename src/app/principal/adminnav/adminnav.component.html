@@ -84,10 +84,12 @@
             aria-controls="dropdown-basic"> Reports
           </button>
           <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-basic">
-            <button role="menuitem"><span><a class="dropdown-item" href="#">Action</a></span></button>
-            <button role="menuitem"><span><a class="dropdown-item" href="#">Another action</a></span></button>
-            <button role="menuitem"><span><a class="dropdown-item" href="#">Something else here</a></span></button>
-            <button role="menuitem"><span><a class="dropdown-item" href="#">Separated link</a></span></button>
+            <button role="menuitem"><span><a class="dropdown-item" [routerLink]="['/enrollreport']">Enrolled Students</a></span></button>
+            <button role="menuitem"><span><a class="dropdown-item" [routerLink]="['/rejectreport']">Rejected Students</a></span></button>
+            <button role="menuitem"><span><a class="dropdown-item" [routerLink]="['/passreport']">Passed Students</a></span></button>
+            <button role="menuitem"><span><a class="dropdown-item" [routerLink]="['/failreport']">Failed Students</a></span></button>
+            <button role="menuitem"><span><a class="dropdown-item" [routerLink]="['/verifyreport']">Verified Students</a></span></button>
+            <button role="menuitem"><span><a class="dropdown-item" [routerLink]="['/unverifyreport']">Unverified Students</a></span></button>
           </ul>
         </div>
       </span>

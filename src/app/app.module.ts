@@ -68,6 +68,12 @@ import { ContactusComponent } from './student/contactus/contactus.component';
 import { ApplicationstatusviewComponent } from './student/applicationstatusview/applicationstatusview.component';
 import { ParentregComponent } from './student/parentreg/parentreg.component';
 import { ParentviewComponent } from './student/parentview/parentview.component';
+import { ReportenrollComponent } from './principal/reportenroll/reportenroll.component';
+import { ReportrejectComponent } from './principal/reportreject/reportreject.component';
+import { ReportpassComponent } from './principal/reportpass/reportpass.component';
+import { ReportfailComponent } from './principal/reportfail/reportfail.component';
+import { ReportverifyComponent } from './principal/reportverify/reportverify.component';
+import { ReportunverifyComponent } from './principal/reportunverify/reportunverify.component';
 
 
 
@@ -124,6 +130,12 @@ import { ParentviewComponent } from './student/parentview/parentview.component';
     ApplicationstatusviewComponent,
     ParentregComponent,
     ParentviewComponent,
+    ReportenrollComponent,
+    ReportrejectComponent,
+    ReportpassComponent,
+    ReportfailComponent,
+    ReportverifyComponent,
+    ReportunverifyComponent,
 
 
   ],

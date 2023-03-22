@@ -1,3 +1,4 @@
+import { ToastrService } from 'ngx-toastr';
 import { Office } from './../_models/office';
 import { Interviewer } from './../_models/Interviewer';
 import { HttpClient } from '@angular/common/http';
@@ -30,7 +31,7 @@ export class AccountServiceService {
   currentOffice$ = this.currentOfficeSource.asObservable();
 
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private toastr: ToastrService) { }
 
   login(model: any) {
     return this.http.post<User>(this.baseUrl + 'account/login', model).pipe(
@@ -106,7 +107,13 @@ export class AccountServiceService {
   }
   insertstudentdata(data: any) {
     this.http.post("http://localhost:5001/api/account/register",
-      data).toPromise().then(result => { console.log(result); })
+      data).subscribe({
+        next: () => {
+        console.log(data),
+        this.toastr.success("Success");
+        },
+        error: error => this.toastr.error("Error!")
+        })
   }
 
   insertinterviewerdata(data: any) {

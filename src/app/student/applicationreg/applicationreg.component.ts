@@ -1,3 +1,4 @@
+import { Application } from 'src/app/_models/application';
 import { ToastrService } from 'ngx-toastr';
 import { AccountServiceService } from 'src/app/_services/account-service.service';
 import { ApplicationService } from './../../_services/application.service';
@@ -12,6 +13,7 @@ import { Component, OnInit } from '@angular/core';
 export class ApplicationregComponent implements OnInit {
   data: string[] = [];
   submitted = false;
+  // application: Application[] = [];
 
   public ApplicationRegForm: FormGroup;
 
@@ -41,6 +43,7 @@ export class ApplicationregComponent implements OnInit {
       TwelfthYear: ['', Validators.required],
       TwelfthMark: ['', Validators.required, Validators.minLength(30), Validators.maxLength(100)],
       TwelfthNoOfAttempts: ['', Validators.required],
+ 
 
     })
   }
@@ -49,6 +52,7 @@ export class ApplicationregComponent implements OnInit {
     this.applicationService.getcoursedata().subscribe(
       {
         next: val => {
+          val.length
           val.forEach(course => {
             this.data.push(course.courseShortName);
           })
@@ -62,6 +66,8 @@ export class ApplicationregComponent implements OnInit {
       }
     )
   }
+
+ 
   OnSubmit() {
     this.applicationService.insertapplicationreg(this.ApplicationRegForm.value)
   }
@@ -70,6 +76,7 @@ export class ApplicationregComponent implements OnInit {
 
   ngOnInit(): void {
     this.onMe();
+
   }
 }
 

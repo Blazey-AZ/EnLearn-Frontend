@@ -1,3 +1,4 @@
+import { ToastrService } from 'ngx-toastr';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -7,14 +8,20 @@ import { Observable } from 'rxjs';
 })
 export class PersonaldetailsService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private toastr: ToastrService) { }
 
   
 
   insertpersonalinfo(data: any) {
     console.log(data);
     this.http.post("http://localhost:5001/api/personaldetail/register",
-      data).subscribe();
+      data).subscribe({
+        next: () => {
+        console.log(data),
+        this.toastr.success("Success");
+        },
+        error: error => this.toastr.error("Error!")
+        })
   }
   getreligiondata() : Observable<any[]> {
     return this.http.get<any[]>("http://localhost:5001/api/PersonalDetail/getreligion")

@@ -1,3 +1,4 @@
+import { ToastrService } from 'ngx-toastr';
 import { Course } from './../_models/course';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -12,12 +13,18 @@ export class CourseService {
   baseUrl = 'http://localhost:5001/api/';
 
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private toastr: ToastrService) { }
 
 
   insertcoursedata(data: any) {
     this.http.post("http://localhost:5001/api/course/coursereg",
-      data).toPromise().then(result => { console.log(result); })
+      data).subscribe({
+        next: () => {
+        console.log(data),
+        this.toastr.success("success");
+        },
+        error: error => this.toastr.error("Error!")
+        })
   }
 
   getCourses(): Observable<any[]> {

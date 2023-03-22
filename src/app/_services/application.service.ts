@@ -1,3 +1,4 @@
+import { Application } from 'src/app/_models/application';
 import { ToastrService } from 'ngx-toastr';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -29,6 +30,25 @@ export class ApplicationService {
   getAppInfo(Id: string): Observable<any[]> {
     return this.http.get<any[]>("http://localhost:5001/api/application/getapp/" + Id)
   }
+  getEnrollStatus(): Observable<Application[]> {
+    return this.http.get<Application[]>("http://localhost:5001/api/application/enrollreport")
+  }
+  getRejectStatus(): Observable<Application[]> {
+    return this.http.get<Application[]>("http://localhost:5001/api/application/rejectreport")
+  }
+  getPassStatus(): Observable<Application[]> {
+    return this.http.get<Application[]>("http://localhost:5001/api/application/passreport")
+  }
+  getFailStatus(): Observable<Application[]> {
+    return this.http.get<Application[]>("http://localhost:5001/api/application/failreport")
+  }
+  getVerifyStatus(): Observable<Application[]> {
+    return this.http.get<Application[]>("http://localhost:5001/api/application/verifyreport")
+  }
+  getUnverifyStatus(): Observable<Application[]> {
+    return this.http.get<Application[]>("http://localhost:5001/api/application/unverifyreport")
+  }
+
 
   getApplicationDataSingular(aid: string): Observable<any[]> {
     return this.http.get<any[]>("http://localhost:5001/api/application/viewapplicationinfo/" + aid)

@@ -21,7 +21,8 @@ export interface Application {
     twelfthMark: number;   
     twelfthNoOfAttempts: number;   
     date: string;   
-    applicationStatus: string;   
+    applicationStatus: string; 
+      
 
 
 }

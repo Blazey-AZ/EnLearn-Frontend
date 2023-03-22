@@ -3,16 +3,23 @@ import { Religion } from './../_models/religion';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { ToastrService } from 'ngx-toastr';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FaithService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private toastr: ToastrService) { }
   insertreligion(data: any) {
     this.http.post("http://localhost:5001/api/faith/religionreg",
-      data).toPromise().then(result => { console.log(result); })
+      data).subscribe({
+        next: () => {
+        console.log(data),
+        this.toastr.success("success");
+        },
+        error: error => this.toastr.error("Error!")
+        })
   }
 
   getreligiondata() : Observable<any[]> {
@@ -25,7 +32,13 @@ export class FaithService {
   insertcaste(data: any) {
     console.log(data);
     this.http.post("http://localhost:5001/api/faith/castereg",
-      data).subscribe();
+      data).subscribe({
+        next: () => {
+        console.log(data),
+        this.toastr.success("success");
+        },
+        error: error => this.toastr.error("Error!")
+        })
   }
   deleteCaste(casteID: number): Observable<null>{
     return this.http.delete<any>("http://localhost:5001/api/faith/getcastedelete/"+casteID);

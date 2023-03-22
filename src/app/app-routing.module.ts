@@ -1,3 +1,9 @@
+import { ReportunverifyComponent } from './principal/reportunverify/reportunverify.component';
+import { ReportverifyComponent } from './principal/reportverify/reportverify.component';
+import { ReportfailComponent } from './principal/reportfail/reportfail.component';
+import { ReportpassComponent } from './principal/reportpass/reportpass.component';
+import { ReportrejectComponent } from './principal/reportreject/reportreject.component';
+import { ReportenrollComponent } from './principal/reportenroll/reportenroll.component';
 import { ApplicationstatusviewComponent } from './student/applicationstatusview/applicationstatusview.component';
 import { ContactusComponent } from './student/contactus/contactus.component';
 import { PersonaldetaileditComponent } from './student/personaldetailedit/personaldetailedit.component';
@@ -100,6 +106,14 @@ const routes: Routes = [
   { path: 'officereg', component: OfficeregComponent },
   { path: 'interviewerview', component: InterviewerviewComponent },
   { path: 'officeview', component: OfficeviewComponent },
+  { path: 'enrollreport', component: ReportenrollComponent },
+  { path: 'rejectreport', component: ReportrejectComponent },
+  { path: 'passreport', component: ReportpassComponent },
+  { path: 'failreport', component: ReportfailComponent },
+  { path: 'verifyreport', component: ReportverifyComponent },
+  { path: 'unverifyreport', component: ReportunverifyComponent },
+
+
 
 
 

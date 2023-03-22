@@ -16,6 +16,7 @@ export class StudentregisterComponent implements OnInit {
     Gender: [''],
     UserName: [''],
     Password: [''],
+    Email: [''],
     ParentContact: [''],
     ApplicationStatus: [''],
     ApplicationNo: [''],
